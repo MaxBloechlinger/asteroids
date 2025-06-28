@@ -92,7 +92,7 @@ def main():
                         points *= 2
                     score += points
                     # 20% chance to spawn powerup at asteroid's position
-                    if random.random() < 0.2:
+                    if random.random() < 0.1:
                         powerup = DoubleXPItem()
                         print("Powerup spawned!")
                         powerup.position = asteroid.position.copy()
