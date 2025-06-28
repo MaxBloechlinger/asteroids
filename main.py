@@ -35,6 +35,7 @@ def main():
     shots = pygame.sprite.Group()
     Shot.containers = (shots, updatable, drawable)
 
+    asteroids_destroyed = 0
 
     while True:
         for event in pygame.event.get():
@@ -51,12 +52,15 @@ def main():
         for obj in asteroids:
             if player.collision(obj):
                 print("Game Over!")
+                print(f"{asteroids_destroyed} asteroids destroyed!")
                 return
         for asteroid in asteroids: 
             for shot in shots:
-                if asteroid.collision(shot):
+                if asteroid.collision(shot): 
                     asteroid.split()
                     shot.kill()
+                    asteroids_destroyed += 1
+                     
 
         pygame.display.flip()
         dt = clock.tick(60) / 1000
