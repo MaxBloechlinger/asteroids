@@ -10,7 +10,7 @@ class DoubleXPItem(CircleShape):
         super().__init__(x, y, SHOT_RADIUS*2)
 
     def draw(self, screen):
-        pygame.draw.circle(screen, "yellow", (int(self.position.x), int(self.position.y)), self.radius, 2)
+        pygame.draw.circle(screen, "green", (int(self.position.x), int(self.position.y)), self.radius, 2)
 
     def update(self, dt):
         pass #no movement 
